@@ -6,11 +6,11 @@ RUN apk update
 RUN pip install --no-cache-dir pipenv
 
 # Defining working directory and adding source code
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY Pipfile Pipfile.lock bootstrap.sh ./
 COPY cashman ./cashman
 
+# Enable Local Venv Directory
 ENV PIPENV_VENV_IN_PROJECT=1
 
 # Install API dependencies
